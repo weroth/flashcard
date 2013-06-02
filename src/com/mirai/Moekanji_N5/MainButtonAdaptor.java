@@ -1,11 +1,13 @@
 package com.mirai.Moekanji_N5;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.Toast;
 
 /**
  * Created with IntelliJ IDEA.
@@ -46,7 +48,7 @@ public class MainButtonAdaptor extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Button btn;
+        final Button btn;
 
         if (convertView == null)
         {
@@ -63,7 +65,20 @@ public class MainButtonAdaptor extends BaseAdapter {
         //cb.setText("Button #"+Integer.toString(i));
         btn.setBackgroundResource(R.drawable.ic_launcher);
         btn.setText(filenames[position]);
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Test button press
+                Toast my_toast = Toast.makeText(mContext, btn.getText() + " was pressed!", Toast.LENGTH_LONG);
+                //my_toast.setGravity(Gravity.CENTER, 0, 0);
+                my_toast.show();
+            }
+        });
 
         return btn;
     }
+
+
 }
