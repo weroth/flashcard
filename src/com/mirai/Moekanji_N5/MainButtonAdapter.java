@@ -1,6 +1,8 @@
 package com.mirai.Moekanji_N5;
 
 import android.content.Context;
+import android.content.Intent;
+import android.app.Activity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +16,17 @@ import android.widget.Toast;
  * User: Weroth
  * Date: 6/1/13
  * Time: 12:19 PM
- * Image Adaptor for Main Menu. Fills the gridView with icon images.
+ * Image Adaptor for Main Menu. Dynamically fills the gridView with icon images.
  */
-public class MainButtonAdaptor extends BaseAdapter {
+public class MainButtonAdapter extends BaseAdapter {
     private Context mContext;
 
     // Gets the context to be used later
-    public MainButtonAdaptor(Context c) {
+    public MainButtonAdapter(Context c) {
         mContext = c;
     }
 
-    // Keep the filenames of the images in an array
+    // Keep the file names of the images in an array
     public String[] filenames = {
             "menu_viewsingle",
             "menu_viewcomp",
@@ -65,13 +67,25 @@ public class MainButtonAdaptor extends BaseAdapter {
         //cb.setText("Button #"+Integer.toString(i));
         btn.setBackgroundResource(R.drawable.ic_launcher);
         btn.setText(filenames[position]);
+        btn.setId(position);
         btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                Intent intent = null;
+                switch(btn.getId()) {
+                    case(0):
+                        intent = new Intent(mContext, KanjiAct.class);
+
+                    case(1):
+                    case(2):
+
+                }
+
+                if (intent != null) mContext.startActivity(intent);
 
                 // Test button press
-                Toast my_toast = Toast.makeText(mContext, btn.getText() + " was pressed!", Toast.LENGTH_LONG);
+                Toast my_toast = Toast.makeText(mContext, btn.getText() + " " + btn.getId() +  " was pressed!", Toast.LENGTH_LONG);
                 //my_toast.setGravity(Gravity.CENTER, 0, 0);
                 my_toast.show();
             }

@@ -9,7 +9,7 @@
             android:text="Moekanji"
             android:id="@+id/textView" android:layout_gravity="center" android:textColor="#fff7e2"
             android:textSize="20dp" android:visibility="visible" android:editable="false"/>
-    <GridView android:id="@+id/grid" android:numColumns="2"
+    <GridView android:id="@+id/maingrid" android:numColumns="2"
               android:horizontalSpacing="20dip" android:verticalSpacing="20dip"
               android:stretchMode="columnWidth" android:layout_width="fill_parent" android:layout_height="240dp" />
 </LinearLayout>
