@@ -3,7 +3,7 @@
           package="com.mirai.Moekanji_N5"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15"/>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18"/>
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
         <activity android:name="MainAct"
                   android:label="@string/app_name">
@@ -15,6 +15,10 @@
         <activity
             android:label="@string/app_name"
             android:name=".KanjiAct" >
+        </activity>
+        <activity
+                android:label="@string/app_name"
+                android:name=".ImageDisplayAct" >
         </activity>
     </application>
 </manifest>

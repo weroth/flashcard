@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -155,9 +154,16 @@ public class KanjiDatabase extends SQLiteOpenHelper {
             {
                 Kanji kanji = new Kanji();
                 // Set values
-                // The order of the columns in the table is in alphabetical order.
-                kanji.setId(Integer.parseInt(cursor.getString(1)));
-                kanji.setKanji(cursor.getString(0));
+                // The order of the columns in the table is how the sql table is constructed
+                kanji.setId(Integer.parseInt(cursor.getString(0)));
+
+                kanji.setKanji(cursor.getString(1));
+
+                kanji.setMeaning(cursor.getString(2));
+
+                kanji.setCategory_id(Integer.parseInt(cursor.getString(3)));
+
+                kanji.setOn(cursor.getString(4));
                 //kanji.setCategory_id(cursor.getString(2));
 
 

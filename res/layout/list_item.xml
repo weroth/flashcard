@@ -29,9 +29,9 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:src="@drawable/arrow" />
-    <!-- City-->
+    <!-- hiragana-->
     <TextView
-            android:id="@+id/kanjiword"
+            android:id="@+id/tvHiragana"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/list_image"
@@ -42,13 +42,13 @@
             android:textSize="25dip"
             android:textStyle="bold"
             android:typeface="sans" />
-    <!-- Weather Information-->
+    <!-- English meaning-->
     <TextView
-            android:id="@+id/engword"
+            android:id="@+id/tvEngword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvCity"
-            android:layout_alignLeft="@+id/tvCity"
+            android:layout_below="@+id/tvHiragana"
+            android:layout_alignLeft="@+id/tvHiragana"
             android:paddingTop="5dip"
             android:layout_centerHorizontal="true"
             android:textColor="#343434"
